@@ -1,43 +1,14 @@
 ﻿#include<iostream>
 #include<stdlib.h>
 #include<time.h>
-
-using namespace std;
-
-const int ROWS = 5;
-const int COLS = 8;
-
-void FillRand(int arr[], const int n, int minRand, int maxRand);
-void FillRand(double arr[], const int n, int minRand, int maxRand);
-void FillRand(char arr[], const int n, int minRand, int maxRand);
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRandd = 0, int maxRandd = 100);
+#include"Stdafh.h"
+#include"constants.h"
+#include"FillRand.h"
+#include"Print.h"
+#include"Sort.h"
+#include"Statistics.h"
 
 
-void Print(int arr[], const int n);
-void Print(double arr[], const int n);
-void Print(char arr[], const int n);
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
-
-int Sum(int arr[], const int n);
-double Sum(double arr[], const int n);
-int Sum(char arr[], const int n);
-int Sum(int[ROWS][COLS], const int ROWS, const int COLS);
-
-double Avg(int arr[], const int n);
-double Avg(double arr[], const int n);
-double Avg(char arr[], const int n);
-
-int minValueIn(int arr[], const int n);
-double minValueIn(double arr[], const int n);
-int minValueIn(char arr[], const int n);
-
-int maxValueIn(int arr[], const int n);
-double maxValueIn(double arr[], const int n);
-int maxValueIn(char arr[], const int n);
-
-void Sort(int arr[], const int n);
-void Sort(double arr[], const int n);
-void Sort(char arr[], const int n);
 
 void shiftLeft(int arr[], const int n, int number_of_shifts);
 void shiftLeft(double arr[], const int n, int number_of_shifts);
@@ -82,235 +53,13 @@ void main()
 	cout << "Сумма элементов массива составляет: "; //<< //Sum(i_arr_2[ROWS][COLS]) << endl;
 }
 
-void FillRand(int arr[], const int n, int minRand, int maxRand)
-{
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % (maxRand - minRand) + minRand;
-	}
-}
-void FillRand(double arr[], const int n, int minRand, int maxRand)
-{
-	minRand *= 100;
-	maxRand *= 100;
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % (maxRand - minRand) + minRand;
-		arr[i] /= 100;
-	}
-}
-void FillRand(char arr[], const int n, int minRand, int maxRand)
-{
-	
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % (maxRand - minRand) + minRand;
-		
-	}
-}
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRandd, int maxRandd)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = rand() % (maxRandd - minRandd) + minRandd;
-		}
-	}
-}
 
-void Print(int arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(char arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
 
-int Sum(int arr[], const int n)
-{
-	int x = 0;
-	for (int i = 0; i < n; i++)
-	{
-		x += arr[i];
-	}
-	return x;
-}
-double Sum(double arr[], const int n)
-{
-	double x = 0;
-	for (int i = 0; i < n; i++)
-	{
-		x += arr[i];
-	}
-	return x;
-}
-int Sum(char arr[], const int n)
-{
-	int x = 0;
-	
-	for (int i = 0; i < n; i++)
-	{
-		x += arr[i];
-	}
-	return x;
-}
-int Sum(int[ROWS][COLS], const int ROWS, const int COLS)
-{
 
-}
 
-double Avg(int arr[], const int n)
-{
-	return (double)Sum(arr, n) / n;
-}
-double Avg(double arr[], const int n)
-{
-	return Sum(arr, n) / n;
-}
-double Avg(char arr[], const int n)
-{
-	return Sum(arr, n) / n;
-}
 
-int minValueIn(int arr[], const int n)
-{
-	int min = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (min > arr[i])
-			min = arr[i];
-	}
-	return min;
-}
-double minValueIn(double arr[], const int n)
-{
-	double min = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (min > arr[i])
-			min = arr[i];
-	}
-	return min;
-}
-int minValueIn(char arr[], const int n)
-{
-	int min = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (min > arr[i])
-			min = arr[i];
-	}
-	return min;
-}
 
-int maxValueIn(int arr[], const int n)
-{
-	int max = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (max < arr[i])
-			max = arr[i];
-	}
-	return max;
-}
-double maxValueIn(double arr[], const int n)
-{
-	double max = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (max < arr[i])
-			max = arr[i];
-	}
-	return max;
-}
-int maxValueIn(char arr[], const int n)
-{
-	int max = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (max < arr[i])
-			max = arr[i];
-	}
-	return max;
-}
 
-void Sort(int arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				int buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-	Print(arr, n);
-}
-void Sort(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				double buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-	Print(arr, n);
-}
-void Sort(char arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				char buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-	Print(arr, n);
-}
 
 void shiftLeft(int arr[], const int n, int number_of_shifts)
 {
