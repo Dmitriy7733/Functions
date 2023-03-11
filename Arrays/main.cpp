@@ -21,6 +21,7 @@ void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
 int Sum(int arr[], const int n);
 double Sum(double arr[], const int n);
 int Sum(char arr[], const int n);
+int Sum(int[ROWS][COLS], const int ROWS, const int COLS);
 
 double Avg(int arr[], const int n);
 double Avg(double arr[], const int n);
@@ -78,6 +79,7 @@ void main()
 	int i_arr_2[ROWS][COLS];
 	FillRand (i_arr_2, ROWS, COLS);
 	Print (i_arr_2, ROWS, COLS);
+	cout << "Сумма элементов массива составляет: "; //<< //Sum(i_arr_2[ROWS][COLS]) << endl;
 }
 
 void FillRand(int arr[], const int n, int minRand, int maxRand)
@@ -180,6 +182,10 @@ int Sum(char arr[], const int n)
 		x += arr[i];
 	}
 	return x;
+}
+int Sum(int[ROWS][COLS], const int ROWS, const int COLS)
+{
+
 }
 
 double Avg(int arr[], const int n)
