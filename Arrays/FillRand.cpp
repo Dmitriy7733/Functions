@@ -1,4 +1,5 @@
 #include"FillRand.h"
+#include"Print.h"
 void FillRand(int arr[], const int n, int minRand, int maxRand)
 {
 	for (int i = 0; i < n; i++)
@@ -34,4 +35,67 @@ void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRandd,
 			arr[i][j] = rand() % (maxRandd - minRandd) + minRandd;
 		}
 	}
+}
+void UniqueRand(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		bool unique;
+		do
+		{
+			arr[i] = rand() % n;
+			unique = true;
+			for (int j = 0; j < i; j++)
+			{
+				if (arr[i] == arr[j])
+				{
+					unique = false;
+					break;
+				}
+			}
+		} while (!unique);
+	}
+	Print(arr, n);
+}
+void UniqueRand(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		bool unique;
+		do
+		{
+			arr[i] = rand() % n;
+			unique = true;
+			for (int j = 0; j < i; j++)
+			{
+				if (arr[i] == arr[j])
+				{
+					unique = false;
+					break;
+				}
+			}
+		} while (!unique);
+	}
+	Print(arr, n);
+}
+void UniqueRand(char arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		bool unique;
+		do
+		{
+			arr[i] = rand() % n;
+			unique = true;
+			for (int j = 0; j < i; j++)
+			{
+				if (arr[i] == arr[j])
+				{
+					unique = false;
+					break;
+				}
+			}
+		} while (!unique);
+	}
+	Print(arr, n);
 }
