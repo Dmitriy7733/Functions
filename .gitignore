@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Arrays/Stdafx.h
+/.gitignore
+/Arrays/Sort.h
