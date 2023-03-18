@@ -1,4 +1,6 @@
 #pragma once
+#include"Stdafh.h"
+#include"constants.h"
 int Sum(int arr[], const int n);
 double Sum(double arr[], const int n);
 int Sum(char arr[], const int n);
