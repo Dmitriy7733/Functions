@@ -128,7 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FillRand.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Shift.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Statistics.cpp" />
     <ClCompile Include="Stdafh.h" />
@@ -137,6 +139,7 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="FillRand.h" />
     <ClInclude Include="Print.h" />
+    <ClInclude Include="Shift.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="Statistics.h" />
   </ItemGroup>
