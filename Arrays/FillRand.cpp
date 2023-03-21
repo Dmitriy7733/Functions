@@ -99,3 +99,38 @@ void UniqueRand(char arr[], const int n)
 	}
 	Print(arr, n);
 }
+void Search(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		int x = 0; int c = 0;
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] == arr[i])
+			{
+				c += 1;
+				x = i;
+			}
+		}
+
+		for (int k = x - 1; k >= 0; k--)
+		{
+			if (arr[k] == arr[i])
+			{
+				c = 0;
+			}
+		}
+
+		if (c > 0)
+		{
+			cout << arr[i] << "повторяется" << c << "раз" << endl;
+		}
+
+	}
+}

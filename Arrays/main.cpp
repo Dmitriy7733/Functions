@@ -7,7 +7,7 @@
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int n = 7;
+	const int n = 12;
 	int arr[n];
 	//double arr[n];
 	//char arr[n];
@@ -31,6 +31,8 @@ void main()
 	Print(arr, n);
 	cout << "Ќовый массив с уникальными числами в заданном диапазоне:" << endl;
 	UniqueRand(arr, n);
+	int brr[n];
+	Search(arr, n)
 	cout << "ƒвумерный массив:" << endl;
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
