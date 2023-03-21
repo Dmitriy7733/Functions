@@ -55,10 +55,12 @@ void UniqueRand(int arr[], const int n);
 void UniqueRand(double arr[], const int n);
 void UniqueRand(char arr[], const int n);
 
+void Search(int arr[], const int n);
+
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int n = 7;
+	const int n = 12;
 	int arr[n];
 	//double arr[n];
 	//char arr[n];
@@ -73,10 +75,13 @@ void main()
 	cout << "Максимальное значение в массиве: " << maxValueIn(arr, n) << endl;
 	cout << "Сортировка массива: " << endl;
 	Sort(arr, n);
+	Print(arr, n);
 	cout << "Сдвиг массива влево: " << endl;
 	shiftLeft(arr, n, 3);
+	Print(arr, n);
 	cout << "Сдвиг массива вправо: " << endl;
 	shiftRight(arr, n, 3);
+	Print(arr, n);
 	cout << "Новый массив с уникальными числами в заданном диапазоне:" << endl;
 	UniqueRand(arr, n);
 	cout << "Двумерный массив:" << endl;
@@ -89,7 +94,12 @@ void main()
 	cout << "Максимальное значение в массиве: " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
 	cout << " Сортировка: " << endl;
 	Sort(i_arr_2, ROWS, COLS);
-	Print(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS); 
+	
+	cout << "Новый массив с проверкой на повторяемость и определением количества повторов" << endl;
+	
+	int brr[] = {-7, 1, 1, 2, 4, 3, 2, -7, 2, 2, 0, 0 };
+	Search (brr, n);
 }
 
 void FillRand(int arr[], const int n, int minRand, int maxRand)
@@ -322,7 +332,6 @@ void Sort(int arr[], const int n)
 			}
 		}
 	}
-	Print(arr, n);
 }
 void Sort(double arr[], const int n)
 {
@@ -338,7 +347,6 @@ void Sort(double arr[], const int n)
 			}
 		}
 	}
-	Print(arr, n);
 }
 void Sort(char arr[], const int n)
 {
@@ -354,7 +362,6 @@ void Sort(char arr[], const int n)
 			}
 		}
 	}
-	Print(arr, n);
 }
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
@@ -389,7 +396,6 @@ void shiftLeft(int arr[], const int n, int number_of_shifts)
 		}
 		arr[n - 1] = buffer;
 	}
-	Print(arr, n);
 }
 void shiftLeft(double arr[], const int n, int number_of_shifts)
 {
@@ -402,7 +408,6 @@ void shiftLeft(double arr[], const int n, int number_of_shifts)
 		}
 		arr[n - 1] = buffer;
 	}
-	Print(arr, n);
 }
 void shiftLeft(char arr[], const int n, int number_of_shifts)
 {
@@ -415,7 +420,6 @@ void shiftLeft(char arr[], const int n, int number_of_shifts)
 		}
 		arr[n - 1] = buffer;
 	}
-	Print(arr, n);
 }
 
 void shiftRight(int arr[], const int n, int number_of_shifts)
@@ -429,7 +433,6 @@ void shiftRight(int arr[], const int n, int number_of_shifts)
 		}
 		arr[0] = buffer;
 	}
-	Print(arr, n);
 }
 void shiftRight(double arr[], const int n, int number_of_shifts)
 {
@@ -442,7 +445,6 @@ void shiftRight(double arr[], const int n, int number_of_shifts)
 		}
 		arr[0] = buffer;
 	}
-	Print(arr, n);
 }
 void shiftRight(char arr[], const int n, int number_of_shifts)
 {
@@ -455,7 +457,6 @@ void shiftRight(char arr[], const int n, int number_of_shifts)
 		}
 		arr[0] = buffer;
 	}
-	Print(arr, n);
 }
 
 void UniqueRand(int arr[], const int n)
@@ -520,4 +521,40 @@ void UniqueRand(char arr[], const int n)
 		} while (!unique);
 	}
 	Print(arr, n);
+}
+	
+void Search(int arr[], const int n)
+{
+		for (int i = 0; i < n; i++)
+		{
+			cout << arr[i] << "\t";
+		}
+		cout << endl;
+
+		for (int i = 0; i < n; i++)
+		{
+			int x = 0; int c = 0;
+			for (int j = i + 1; j < n; j++)
+			{
+				if (arr[j] == arr[i])
+				{
+					c += 1;
+					x = i;
+				}
+			}
+
+			for (int k = x - 1; k >= 0; k--)
+			{
+				if (arr[k] == arr[i])
+				{
+					c = 0;
+				}
+			}
+
+			if (c > 0)
+			{
+				cout << arr[i] << "повторяется" << c << "раз" << endl;
+			}
+
+		}
 }
