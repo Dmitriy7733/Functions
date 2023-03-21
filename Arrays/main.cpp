@@ -31,8 +31,6 @@ void main()
 	Print(arr, n);
 	cout << "Ќовый массив с уникальными числами в заданном диапазоне:" << endl;
 	UniqueRand(arr, n);
-	int brr[n];
-	Search(arr, n)
 	cout << "ƒвумерный массив:" << endl;
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
@@ -44,4 +42,9 @@ void main()
 	cout << " —ортировка: " << endl;
 	Sort(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
+
+	cout << "Ќовый массив с проверкой на повтор€емость и определением количества повторов" << endl;
+
+	int brr[] = { -7, 1, 1, 2, 4, 3, 2, -7, 2, 2, 0, 0 };
+	Search(brr, n);
 }
