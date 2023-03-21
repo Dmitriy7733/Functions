@@ -22,10 +22,13 @@ void main()
 	cout << "Максимальное значение в массиве: " << maxValueIn(arr, n) << endl;
 	cout << "Сортировка массива: " << endl;
 	Sort(arr, n);
+	Print(arr, n);
 	cout << "Сдвиг массива влево: " << endl;
 	shiftLeft(arr, n, 3);
+	Print(arr, n);
 	cout << "Сдвиг массива вправо: " << endl;
 	shiftRight(arr, n, 3);
+	Print(arr, n);
 	cout << "Новый массив с уникальными числами в заданном диапазоне:" << endl;
 	UniqueRand(arr, n);
 	cout << "Двумерный массив:" << endl;
