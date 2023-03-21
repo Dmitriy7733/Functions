@@ -12,36 +12,35 @@ void FillRand(double arr[], const int n, int minRand, int maxRand);
 void FillRand(char arr[], const int n, int minRand, int maxRand);
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRandd = 0, int maxRandd = 100);
 
-template<typename>
-void Print(int arr[], const int n);
-void Print(double arr[], const int n);
-void Print(char arr[], const int n);
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+void Print(T arr[], const int n);
+template<typename T>
+void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-int Sum(int arr[], const int n);
-double Sum(double arr[], const int n);
-int Sum(char arr[], const int n);
-int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+T Sum(T arr[], const int n);
+template<typename T>
+T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-double Avg(int arr[], const int n);
-double Avg(double arr[], const int n);
-double Avg(char arr[], const int n);
-double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+double Avg(T arr[], const int n);
+template<typename T>
+double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-int minValueIn(int arr[], const int n);
-double minValueIn(double arr[], const int n);
-int minValueIn(char arr[], const int n);
-int minValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+T minValueIn(T arr[], const int n);
+template<typename T>
+T minValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-int maxValueIn(int arr[], const int n);
-double maxValueIn(double arr[], const int n);
-int maxValueIn(char arr[], const int n);
-int maxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+T maxValueIn(T arr[], const int n);
+template<typename T>
+T maxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-void Sort(int arr[], const int n);
-void Sort(double arr[], const int n);
-void Sort(char arr[], const int n);
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+void Sort(T arr[], const int n);
+template<typename T>
+void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void shiftLeft(int arr[], const int n, int number_of_shifts);
 void shiftLeft(double arr[], const int n, int number_of_shifts);
@@ -139,7 +138,8 @@ void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRandd,
 	}
 }
 
-void Print(int arr[], const int n)
+template<typename T>
+void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -147,23 +147,9 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(char arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+
+template<typename T>
+void Print(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -175,37 +161,20 @@ void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 }
 
-int Sum(int arr[], const int n)
+template<typename T>
+T Sum(T arr[], const int n)
 {
-	int x = 0;
+	T x = 0;
 	for (int i = 0; i < n; i++)
 	{
 		x += arr[i];
 	}
 	return x;
 }
-double Sum(double arr[], const int n)
+template<typename T>
+T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	double x = 0;
-	for (int i = 0; i < n; i++)
-	{
-		x += arr[i];
-	}
-	return x;
-}
-int Sum(char arr[], const int n)
-{
-	int x = 0;
-
-	for (int i = 0; i < n; i++)
-	{
-		x += arr[i];
-	}
-	return x;
-}
-int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	int sum = 0;
+	T sum = 0;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -215,26 +184,21 @@ int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return sum;
 }
-double Avg(int arr[], const int n)
+template<typename T>
+double Avg(T arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
 }
-double Avg(double arr[], const int n)
-{
-	return Sum(arr, n) / n;
-}
-double Avg(char arr[], const int n)
-{
-	return Sum(arr, n) / n;
-}
-double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS)
+template<typename T>
+double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
-int minValueIn(int arr[], const int n)
+template<typename T>
+T minValueIn(T arr[], const int n)
 {
-	int min = arr[0];
+	T min = arr[0];
 	for (int i = 0; i < n; i++)
 	{
 		if (min > arr[i])
@@ -242,29 +206,11 @@ int minValueIn(int arr[], const int n)
 	}
 	return min;
 }
-double minValueIn(double arr[], const int n)
+
+template<typename T>
+T minValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	double min = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (min > arr[i])
-			min = arr[i];
-	}
-	return min;
-}
-int minValueIn(char arr[], const int n)
-{
-	int min = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (min > arr[i])
-			min = arr[i];
-	}
-	return min;
-}
-int minValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	int min = arr[0][0];
+	T min = arr[0][0];
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -275,9 +221,10 @@ int minValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	return min;
 }
 
-int maxValueIn(int arr[], const int n)
+template<typename T>
+T maxValueIn(T arr[], const int n)
 {
-	int max = 0;
+	T max = 0;
 	for (int i = 0; i < n; i++)
 	{
 		if (max < arr[i])
@@ -285,29 +232,10 @@ int maxValueIn(int arr[], const int n)
 	}
 	return max;
 }
-double maxValueIn(double arr[], const int n)
+template<typename T>
+T maxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	double max = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (max < arr[i])
-			max = arr[i];
-	}
-	return max;
-}
-int maxValueIn(char arr[], const int n)
-{
-	int max = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (max < arr[i])
-			max = arr[i];
-	}
-	return max;
-}
-int maxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	int max = arr[0][0];
+	T max = arr[0][0];
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -318,7 +246,8 @@ int maxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	return max;
 }
 
-void Sort(int arr[], const int n)
+template<typename T>
+void Sort(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -326,44 +255,15 @@ void Sort(int arr[], const int n)
 		{
 			if (arr[j] < arr[i])
 			{
-				int buffer = arr[i];
+				T buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
 			}
 		}
 	}
 }
-void Sort(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				double buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-}
-void Sort(char arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				char buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-}
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
+template<typename T>
+void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -375,7 +275,7 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 				{
 					if (arr[k][l] < arr[i][j])
 					{
-						int buffer = arr[i][j];
+						T buffer = arr[i][j];
 						arr[i][j] = arr[k][l];
 						arr[k][l] = buffer;
 					}
