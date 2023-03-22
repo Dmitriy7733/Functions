@@ -12,35 +12,23 @@ void FillRand(double arr[], const int n, int minRand, int maxRand);
 void FillRand(char arr[], const int n, int minRand, int maxRand);
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRandd = 0, int maxRandd = 100);
 
-template<typename T>
-void Print(T arr[], const int n);
-template<typename T>
-void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>void Print(T arr[], const int n);
+template<typename T>void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-T Sum(T arr[], const int n);
-template<typename T>
-T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>T Sum(T arr[], const int n);
+template<typename T>T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-double Avg(T arr[], const int n);
-template<typename T>
-double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T> double Avg(T arr[], const int n);
+template<typename T> double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-T minValueIn(T arr[], const int n);
-template<typename T>
-T minValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>T minValueIn(T arr[], const int n);
+template<typename T>T minValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-T maxValueIn(T arr[], const int n);
-template<typename T>
-T maxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>T maxValueIn(T arr[], const int n);
+template<typename T>T maxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-void Sort(T arr[], const int n);
-template<typename T>
-void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>void Sort(T arr[], const int n);
+template<typename T>void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void shiftLeft(int arr[], const int n, int number_of_shifts);
 void shiftLeft(double arr[], const int n, int number_of_shifts);
