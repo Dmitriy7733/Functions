@@ -49,9 +49,9 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	const int n = 12;
-	//int arr[n];
+	int arr[n];
 	//double arr[n];
-	char arr[n];
+	//char arr[n];
 	int minRand, maxRand;
 
 	cout << "Введите минимальное и максимальное значения случайных чисел: "; cin >> minRand >> maxRand;
@@ -180,12 +180,12 @@ T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
 template<typename T>
 double Avg(T arr[], const int n)
 {
-	return (double)Sum(arr, n) / n;
+	return Sum(arr, n)/ n;
 }
 template<typename T>
 double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+	return  Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
 template<typename T>
