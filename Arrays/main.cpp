@@ -1,6 +1,6 @@
 ﻿#include<iostream>
-#include<stdlib.h>
-#include<time.h>
+//#include<stdlib.h>
+//#include<time.h>
 
 using namespace std;
 
@@ -17,6 +17,7 @@ template<typename T>void Print(T arr[ROWS][COLS], const int ROWS, const int COLS
 
 template<typename T>T Sum(T arr[], const int n);
 template<typename T>T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
+const char* Sum(char arr[], const int n);
 
 template<typename T> double Avg(T arr[], const int n);
 template<typename T> double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
@@ -48,9 +49,9 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	const int n = 12;
-	int arr[n];
+	//int arr[n];
 	//double arr[n];
-	//char arr[n];
+	char arr[n];
 	int minRand, maxRand;
 
 	cout << "Введите минимальное и максимальное значения случайных чисел: "; cin >> minRand >> maxRand;
@@ -158,6 +159,10 @@ T Sum(T arr[], const int n)
 		x += arr[i];
 	}
 	return x;
+}
+const char* Sum(char arr[], const int n)
+{
+	return "Буквы суммировать нельзя!";
 }
 template<typename T>
 T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
