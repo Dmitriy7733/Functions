@@ -11,29 +11,6 @@ const char* Sum(char arr[], const int n);
 template<typename T> double Avg(T arr[], const int n);
 template<typename T> double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>T minValueIn(T arr[], const int n);
-template<typename T>T minValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
-template<typename T>T maxValueIn(T arr[], const int n);
-template<typename T>T maxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
-template<typename T>void Sort(T arr[], const int n);
-template<typename T>void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
-void shiftLeft(int arr[], const int n, int number_of_shifts);
-void shiftLeft(double arr[], const int n, int number_of_shifts);
-void shiftLeft(char arr[], const int n, int number_of_shifts);
-
-void shiftRight(int arr[], const int n, int number_of_shifts);
-void shiftRight(double arr[], const int n, int number_of_shifts);
-void shiftRight(char arr[], const int n, int number_of_shifts);
-
-void UniqueRand(int arr[], const int n);
-void UniqueRand(double arr[], const int n);
-void UniqueRand(char arr[], const int n);
-
-void Search(int arr[], const int n);
-
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -121,56 +98,6 @@ double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	return  Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
-template<typename T>
-T minValueIn(T arr[], const int n)
-{
-	T min = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (min > arr[i])
-			min = arr[i];
-	}
-	return min;
-}
-
-template<typename T>
-T minValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	T min = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			if (arr[i][j] < min) min = arr[i][j];
-		}
-	}
-	return min;
-}
-
-template<typename T>
-T maxValueIn(T arr[], const int n)
-{
-	T max = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (max < arr[i])
-			max = arr[i];
-	}
-	return max;
-}
-template<typename T>
-T maxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	T max = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			if (arr[i][j] > max) max = arr[i][j];
-		}
-	}
-	return max;
-}
 
 template<typename T>
 void Sort(T arr[], const int n)
